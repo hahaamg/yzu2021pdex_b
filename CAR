@@ -1,25 +1,45 @@
-
+/**
+ * @author 1092050 SUN,MU-HUAN
+ * @date 2021/03/12
+ */
 #include <iostream>
 #include <string>
 using namespace std;
+/**
+ *設定一個類別，命名為CCAR
+ *成員存取限制為Private(只能在類別物件中使用，不能直接透過物件來呼叫使用)，名字為nickname
+ *受保護的成員(存取它有條件限制以保護該成員，當您將類別成員宣告為受保護的成員之後，繼承它的類別就可以直接使用這些成員，但這些成員 仍然受到類別的保護，不可被物件直接呼叫使用。)
+ *定義整數light
+ *定義整數wheel
+ */
 class CCAR {
 private:
 string nickname;
 protected:
 int light;
 int wheel;
+/**
+ *成員存取限制為Public
+ *CCAR() :light(2)為建構子，兩個燈，5個輪胎
 public:
 CCAR() :light(2)
 {
 wheel = 5;
 cout << "car's constructor(wheel=" << wheel << ")" << endl;
 }
+/**
+ *多型建構子名為nickname，有值傳進來就會跑到這
+ *this->nickname指的是外面的nickname
+ *cout裡面的nickname
 CCAR(string nickname) :light(2)
 {
 wheel = 5;
 this->nickname = nickname;
 cout << "car's constructor(nickname=" << nickname << ")" << endl;
 }
+/**
+ * ~解構子函式的標記，這是一個解構子
+ */ 
 ~CCAR()
 {
 cout << "car's destructor" << "(" << nickname << ")" << endl;
