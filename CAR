@@ -44,6 +44,9 @@ cout << "car's constructor(nickname=" << nickname << ")" << endl;
 {
 cout << "car's destructor" << "(" << nickname << ")" << endl;
 }
+/**
+ *以下void為類別的成員函式
+ */
 void start()
 {
 cout << "car's start" << endl;
@@ -58,10 +61,20 @@ cout << "car's turn" << endl;
 }
 };
 //--------------------------
+/**
+ *class CBMW繼承CCAR，除private項目
+ */
 class CBMW : public CCAR {
 public:
+/**
+ *建構子，有4個燈，4個輪子
+ *~為解構子
+ */
 CBMW() { light = 4; wheel = 4; cout << "bmw's constructor" << endl; }
 ~CBMW() { cout << "bmw's destructor" << endl; }
+/**
+ *以下void為類別的成員函式
+ */
 void Abs()
 {
 cout << "bmw's abs" << endl;
@@ -69,6 +82,9 @@ cout << "bmw's abs" << endl;
 void start()
 {
 cout << "bmw's start" << endl;
+/**
+ *輸出時繼承CCAR的star
+ */
 CCAR::start();//scope operator
 //CCAR c;
 //c.start();
@@ -76,6 +92,10 @@ CCAR::start();//scope operator
 };
 //--------------------------
 int main(int argc, const char * argv[]) {
+/**
+ *宣告類別BMW名字為bmw
+ *使用CBMW內的類別成員函式
+ *
 CBMW bmw;
 // bmw.light=3;
 bmw.start();
