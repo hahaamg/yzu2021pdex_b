@@ -95,7 +95,7 @@ int main(int argc, const char * argv[]) {
 /**
  *宣告類別BMW名字為bmw
  *使用CBMW內的類別成員函式
- *
+ */
 CBMW bmw;
 // bmw.light=3;
 bmw.start();
